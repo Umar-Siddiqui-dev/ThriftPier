@@ -21,7 +21,6 @@ export const databaseProviders = [
         models: [Customer,Inventory,Solditem],
         define: {
           timestamps: true,
-          underscored: true,
         },
       });
       

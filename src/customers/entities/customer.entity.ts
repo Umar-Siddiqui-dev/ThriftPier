@@ -39,11 +39,11 @@ export class Customer extends Model {
     password : string
 
     @Column({
-        type : DataType.STRING,
+        type : DataType.ENUM('seller','buyer'),
         allowNull: false,
         defaultValue : "seller"
     })
-    role : string 
+    role : 'seller' | 'buyer' 
 
     @Column({
      type : DataType.JSON,
@@ -57,6 +57,14 @@ export class Customer extends Model {
        })
        boughtId : any
 
+       @Column({
+        type: DataType.DATE,
+       })
+       createdAt?: any;
+       @Column({
+        type: DataType.DATE,
+       })
+       updatedAt?: any;
     // Define the sold items relation
     @HasMany(() => Inventory, 'sellerId')
     soldItems: Inventory[];

@@ -21,11 +21,11 @@ password: string;
 role: string;
 
 @IsString()
-@IsNotEmpty()
+
 soldId: any;
 
 @IsString()
-@IsNotEmpty()
+
 boughtId: any;
 
 }
